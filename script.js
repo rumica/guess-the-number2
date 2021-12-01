@@ -4,7 +4,7 @@ let guessInput = document.querySelector('.guess-input')
 let checkBtn = document.querySelector('.check')
 let message = document.querySelector('.message')
 let scoreNumber = document.querySelector('.score-number')
-let highScore = document.querySelector('.highscore')
+let highScore = document.querySelector('.highscorenumber')
 let body = document.querySelector('body')
 
 
@@ -24,6 +24,8 @@ function newgame (){
     console.log(num)
 }
 
+let sum = 0;
+
 checkBtn.addEventListener('click', clickButton)
 
 function clickButton (){
@@ -32,7 +34,7 @@ function clickButton (){
         if(scoreNumber.innerHTML > 0){
             message.innerHTML = 'Sorry, you guessed too high :('
         } else {
-            message.innerHTML = 'You loose! :('
+            message.innerHTML = 'You lost! :('
             body.style.backgroundColor = '#DE4646'
         }
     } else if(guessInput.value < num){
@@ -51,6 +53,9 @@ function clickButton (){
         secretNumber.innerHTML = `🎉${num}🎉`
         body.style.backgroundColor = '#82BB87'
         againBtn.style.display = 'block';
+        if(scoreNumber.innerHTML > sum){
+            highScore.innerHTML = `High score: ${scoreNumber.innerHTML}`
+        }
     }
 }
 
