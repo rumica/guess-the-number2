@@ -42,7 +42,7 @@ function clickButton (){
         if(scoreNumber.innerHTML > 0){
             message.innerHTML = 'Sorry, you guessed too low :('
         } else {
-            message.innerHTML = 'You loose! :('
+            message.innerHTML = 'You lost! :('
             body.style.backgroundColor = '#DE4646'
             againBtn.style.display = 'block';
         }
@@ -54,7 +54,7 @@ function clickButton (){
         body.style.backgroundColor = '#82BB87'
         againBtn.style.display = 'block';
         if(scoreNumber.innerHTML > sum){
-            highScore.innerHTML = `High score: ${scoreNumber.innerHTML}`
+            highScore.innerHTML = `${scoreNumber.innerHTML}`
         }
     }
 }
